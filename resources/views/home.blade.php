@@ -14,7 +14,22 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <td>ID</td>
+                                <td>Title</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($posts as $post)
+                                <tr>
+                                    <td>{{ $post->id }}</td>
+                                    <td>{{ $post->title }}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
