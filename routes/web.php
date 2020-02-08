@@ -22,5 +22,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth', 'namespace' => 'Admin
         Route::get('/', 'PostController@index')->name('post.index');
         Route::get('/create', 'PostController@create')->name('post.create');
         Route::post('/', 'PostController@store')->name('post.store');
+
+        Route::get('/{post}/edit', 'PostController@edit')->name('post.edit');
+        Route::patch('/{post}', 'PostController@update')->name('post.update');
     });
 });

@@ -32,7 +32,9 @@
                         <tr>
                             <td>{{ $post->title }}</td>
                             <td>{{ $post->createdBy->name ?? 'None' }}</td>
-                            <td></td>
+                            <td>
+                                <a href="{{ route('post.edit', $post->id) }}" class="btn btn-primary btn-xs">Edit</a>
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>

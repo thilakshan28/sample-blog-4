@@ -5,7 +5,7 @@
                 alt="profile image">
         </div>
         <div class="info-wrapper">
-            <p class="user-name">Allen Clerk</p>
+            <p class="user-name">itharshz07</p>
 
         </div>
     </div>
