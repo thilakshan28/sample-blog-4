@@ -40,4 +40,21 @@ class PostController extends Controller
         $post->update($data);
         return redirect()->route('post.index')->with('success', 'Post has been updated successfuly!');
     }
+
+    public function delete(Post $post)
+    {
+        return view('admin.post.delete', compact('post'));
+    }
+
+    public function destory(Post $post)
+    {
+        $post->delete();
+        return redirect()->route('post.index')->with('success', 'Post has been deleted successfuly!');
+    }
+
+    public function show(Post $post)
+    {
+        $post->load('createdBy');
+        return view('admin.post.show', compact('post'));
+    }
 }

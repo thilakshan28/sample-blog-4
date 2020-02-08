@@ -33,7 +33,9 @@
                             <td>{{ $post->title }}</td>
                             <td>{{ $post->createdBy->name ?? 'None' }}</td>
                             <td>
+                                <a href="{{ route('post.show', $post->id) }}" class="btn btn-info btn-xs">Show</a>
                                 <a href="{{ route('post.edit', $post->id) }}" class="btn btn-primary btn-xs">Edit</a>
+                                <a href="{{ route('post.delete', $post->id) }}" class="btn btn-danger btn-xs">Delete</a>
                             </td>
                         </tr>
                         @endforeach

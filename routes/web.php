@@ -23,7 +23,13 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth', 'namespace' => 'Admin
         Route::get('/create', 'PostController@create')->name('post.create');
         Route::post('/', 'PostController@store')->name('post.store');
 
-        Route::get('/{post}/edit', 'PostController@edit')->name('post.edit');
-        Route::patch('/{post}', 'PostController@update')->name('post.update');
+        Route::group(['prefix' => '{post}'], function () {
+            Route::get('/', 'PostController@show')->name('post.show');
+            Route::get('/edit', 'PostController@edit')->name('post.edit');
+            Route::patch('/', 'PostController@update')->name('post.update');
+            Route::get('/delete', 'PostController@delete')->name('post.delete');
+            Route::delete('/', 'PostController@destory')->name('post.destory');
+        });
+
     });
 });
