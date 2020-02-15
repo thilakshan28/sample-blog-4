@@ -77,13 +77,16 @@
 
                             <div class="col-md-6">
                                 <select id="role" class="form-control" name="role" required autofocus>
-                                   <option  {{ old('role') == 1 ? 'selected' : ''}}>
+                                   <option value="" {{ old('role') == 1 ? 'selected' : ''}}>
+                                    --Choose User Role--
+                                   </option>
+                                   <option value="Editor" {{ old('role') == 2 ? 'selected' : ''}}>
                                     Editor
                                    </option>
-                                   <option  {{ old('role') == 2 ? 'selected' : ''}}>
+                                   <option value="Admin" {{ old('role') == 3 ? 'selected' : ''}}>
                                     Admin
                                    </option>
-                                   <option {{ old('role') == 3 ? 'selected' : ''}}>
+                                   <option value="Publisher" {{ old('role') == 4 ? 'selected' : ''}}>
                                     Publisher
                                    </option>
                                 </select>

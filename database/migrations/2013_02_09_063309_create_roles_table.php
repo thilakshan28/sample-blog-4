@@ -18,9 +18,11 @@ class CreateRolesTable extends Migration
             $table->string('name');
             $table->longtext('permission')->nullable();
             $table->timestamps();
+            });
 
-
-        });
+        DB::table('roles')->insert(['id' => 1, 'name' => 'Editor']);
+        DB::table('roles')->insert(['id' => 2, 'name' => 'Admin']);
+        DB::table('roles')->insert(['id' => 3, 'name' => 'Publisher']);
     }
 
     /**
