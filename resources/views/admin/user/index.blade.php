@@ -1,5 +1,5 @@
 @extends('layouts.admin.master')
-@section('title', 'Post List')
+@section('title', 'User')
 @section('content')
 
 <div class="row">
@@ -7,10 +7,10 @@
         <div class="card">
             <div class="card-header">
                 <div class="float-left">
-                    <h4 class="card-title">Posts</h4>
+                    <h4 class="card-title">Users</h4>
                 </div>
                 <div class="float-right">
-                    <a href="{{ route('post.create') }}" class="btn btn-success btn-xs">Create</a>
+                    <a>Create</a>
                 </div>
             </div>
             <div class="card-body">
@@ -22,20 +22,20 @@
                 <table class="table">
                     <thead class="thead-dark">
                         <tr>
-                            <th>Title</th>
-                            <th>Created By</th>
+                            <th>FirstName</th>
+                            <th>Roles</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($posts as $post)
+                        @foreach ($roles as $role)
                         <tr>
-                            <td>{{ $post->title }}</td>
-                            <td>{{ $post->createdBy->firstname ?? 'None' }}</td>
+                            <td>{{ $role->firstname }}</td>
+                            <td>{{ $role->roleby->name }}</td>
                             <td>
-                                <a href="{{ route('post.show', $post->id) }}" class="btn btn-info btn-xs">Show</a>
-                                <a href="{{ route('post.edit', $post->id) }}" class="btn btn-primary btn-xs">Edit</a>
-                                <a href="{{ route('post.delete', $post->id) }}" class="btn btn-danger btn-xs">Delete</a>
+                                <a href="{{ route('post.show', $role->id) }}" class="btn btn-info btn-xs">Show</a>
+                                <a href="{{ route('post.edit', $role->id) }}" class="btn btn-primary btn-xs">Edit</a>
+                                <a href="{{ route('post.delete', $role->id) }}" class="btn btn-danger btn-xs">Delete</a>
                             </td>
                         </tr>
                         @endforeach
@@ -43,7 +43,7 @@
                 </table>
                 <div class="pt-2">
                     <div class="float-right">
-                        {{ $posts->links() }}
+                        {{ $roles->links() }}
                     </div>
                 </div>
             </div>

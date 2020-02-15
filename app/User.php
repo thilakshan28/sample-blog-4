@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'firstname', 'lastname', 'phone_no', 'email', 'role_id', 'password',
     ];
 
     /**
@@ -50,5 +50,10 @@ class User extends Authenticatable
     public function likePosts()
     {
         $this->belongsToMany(Post::class, 'like')->withPivot(['action']);
+    }
+
+    public function roleby()
+    {
+        return $this->belongsTo(Role::class, 'role_id');
     }
 }

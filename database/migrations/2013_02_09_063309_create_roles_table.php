@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLikeTable extends Migration
+class CreateRolesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,13 @@ class CreateLikeTable extends Migration
      */
     public function up()
     {
-        Schema::create('like', function (Blueprint $table) {
-            $table->unsignedBigInteger('user_id')->index();
-            $table->unsignedBigInteger('post_id')->index();
-            $table->enum('action', ['Like', 'Dislike', 'Wow', 'Angry'])->default('Like');
+        Schema::create('roles', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('name');
+            $table->longtext('permission')->nullable();
+            $table->timestamps();
+
+
         });
     }
 
@@ -27,6 +30,6 @@ class CreateLikeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('like');
+        Schema::dropIfExists('roles');
     }
 }

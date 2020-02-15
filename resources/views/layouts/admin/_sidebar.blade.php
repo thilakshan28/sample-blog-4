@@ -5,7 +5,7 @@
                 alt="profile image">
         </div>
         <div class="info-wrapper">
-            <p class="user-name">itharshz07</p>
+            <p class="user-name">thilakshan</p>
 
         </div>
     </div>
@@ -23,8 +23,8 @@
             </a>
         </li>
         <li>
-            <a href="pages/forms/form-elements.html">
-                <span class="link-title">Users</span>
+            <a href="{{ route('user.index') }}">
+                <span class="link-title">User</span>
                 <i class="mdi mdi-account link-icon"></i>
             </a>
         </li>

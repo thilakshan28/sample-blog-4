@@ -29,7 +29,15 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth', 'namespace' => 'Admin
             Route::patch('/', 'PostController@update')->name('post.update');
             Route::get('/delete', 'PostController@delete')->name('post.delete');
             Route::delete('/', 'PostController@destory')->name('post.destory');
-        });
 
+        });
+    });
+    Route::group(['prefix' => 'users'], function () {
+        Route::get('/', 'UserController@index')->name('user.index');
+        Route::get('/create', 'UserController@create')->name('user.craete');
     });
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
