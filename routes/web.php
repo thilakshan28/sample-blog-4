@@ -15,6 +15,7 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 
+
 Route::group(['prefix' => 'admin', 'middleware' => 'auth', 'namespace' => 'Admin'], function () {
     Route::get('/', 'DashboardController@index')->name('dashboard');
 
@@ -34,7 +35,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth', 'namespace' => 'Admin
     });
     Route::group(['prefix' => 'users'], function () {
         Route::get('/', 'UserController@index')->name('user.index');
-        Route::get('/create', 'UserController@create')->name('user.craete');
+        Route::get('/create', 'UserController@create')->name('user.create');
+        Route::post('/','UserController@store')->name('user.store');
     });
 });
 

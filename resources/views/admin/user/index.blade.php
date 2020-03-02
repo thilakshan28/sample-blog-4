@@ -1,5 +1,5 @@
 @extends('layouts.admin.master')
-@section('title', 'User')
+@section('title', 'User List')
 @section('content')
 
 <div class="row">
@@ -10,7 +10,7 @@
                     <h4 class="card-title">Users</h4>
                 </div>
                 <div class="float-right">
-                    <a>Create</a>
+                    <a href="{{ route('user.create') }}" class="btn btn-success btn-xs">Create</a>
                 </div>
             </div>
             <div class="card-body">
