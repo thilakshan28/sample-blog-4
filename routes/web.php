@@ -37,6 +37,15 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth', 'namespace' => 'Admin
         Route::get('/', 'UserController@index')->name('user.index');
         Route::get('/create', 'UserController@create')->name('user.create');
         Route::post('/','UserController@store')->name('user.store');
+
+        Route::group(['prefix' => '{user}'], function () {
+            Route::get('/', 'UserController@show')->name('user.show');
+            Route::get('/edit', 'UserController@edit')->name('user.edit');
+            Route::patch('/', 'UserController@update')->name('user.update');
+            Route::get('/delete', 'UserController@delete')->name('user.delete');
+            Route::delete('/', 'UserController@destory')->name('user.destory');
+
+        });
     });
 });
 

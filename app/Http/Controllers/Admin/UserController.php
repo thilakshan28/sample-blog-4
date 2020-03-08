@@ -14,7 +14,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        $roles = User::with('roleby')->orderBy('id', 'desc')->paginate(12);
+        $roles = User::with('roleBy')->orderBy('id', 'desc')->paginate(12);
         return view('admin.user.index', compact('roles'));
     }
 
@@ -37,5 +37,11 @@ class UserController extends Controller
             'password' => Hash::make($data['password']),
         ]);
         return redirect()->route('user.index')->with('success', 'User has been created successfuly!');
+    }
+
+    public function show(User $user)
+    {
+        $user->all();
+        return view('admin.user.show', compact('user'));
     }
 }

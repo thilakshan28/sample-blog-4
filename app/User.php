@@ -52,7 +52,7 @@ class User extends Authenticatable
         $this->belongsToMany(Post::class, 'like')->withPivot(['action']);
     }
 
-    public function roleby()
+    public function roleBy()
     {
         return $this->belongsTo(Role::class, 'role_id');
     }

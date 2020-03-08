@@ -31,11 +31,11 @@
                         @foreach ($roles as $role)
                         <tr>
                             <td>{{ $role->firstname }}</td>
-                            <td>{{ $role->roleby->name }}</td>
+                            <td>{{ $role->roleBy->name }}</td>
                             <td>
-                                <a href="{{ route('post.show', $role->id) }}" class="btn btn-info btn-xs">Show</a>
-                                <a href="{{ route('post.edit', $role->id) }}" class="btn btn-primary btn-xs">Edit</a>
-                                <a href="{{ route('post.delete', $role->id) }}" class="btn btn-danger btn-xs">Delete</a>
+                                <a href="{{ route('user.show', $role->id) }}" class="btn btn-info btn-xs">Show</a>
+                                <a href="{{ route('user.edit', $role->id) }}" class="btn btn-primary btn-xs">Edit</a>
+                                <a href="{{ route('user.delete', $role->id) }}" class="btn btn-danger btn-xs">Delete</a>
                             </td>
                         </tr>
                         @endforeach
