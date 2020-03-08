@@ -9,6 +9,9 @@
                 <div class="float-left">
                     <h4 class="card-title"> {{ $user->firstname }} {{ $user->lastname }}</h4>
                 </div>
+                <div class="float-right">
+                    <h4 class="card-title"> {{ $user->roleBy->name }}</h4>
+                </div>
             </div>
             <div class="card-body">
                     <table>
