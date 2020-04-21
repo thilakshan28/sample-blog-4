@@ -1,7 +1,7 @@
 <div class="sidebar">
     <div class="user-profile">
         <div class="display-avatar animated-avatar">
-            <img class="profile-img img-lg rounded-circle" src="{{ asset('images/profile/male/image_1.png') }}"
+            <img class="profile-img img-lg rounded-circle" src="{{ asset('images/profile/male/image_5.png') }}"
                 alt="profile image">
         </div>
         <div class="info-wrapper">
@@ -11,6 +11,12 @@
     </div>
     <ul class="navigation-menu">
         <li class="nav-category-divider">MAIN</li>
+        <li>
+            <a href="{{ route('home') }}">
+                <span class="link-title">Home</span>
+                <i class="mdi mdi-home link-icon"></i>
+            </a>
+        </li>
         <li>
             <a href="{{ route('dashboard') }}">
                 <span class="link-title">Dashboard</span>

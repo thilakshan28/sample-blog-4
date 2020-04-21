@@ -16,7 +16,15 @@
 
                     You are logged in!
                 </div>
-            </div>
+                <ul class="navigation-menu">
+                    <li class="nav-category-divider">HOME</li>
+                    <li>
+                        <a href="{{ route('dashboard') }}">
+                            <span class="link-title">DASHBOARD</span>
+                            <i class="mdi mdi-gauge link-icon"></i>
+                        </a>
+                    </li>
+
         </div>
     </div>
 </div>
