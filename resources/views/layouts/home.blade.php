@@ -21,7 +21,6 @@
                     <li>
                         <a href="{{ route('dashboard') }}">
                             <span class="link-title">DASHBOARD</span>
-                            <i class="mdi mdi-gauge link-icon"></i>
                         </a>
                     </li>
 
